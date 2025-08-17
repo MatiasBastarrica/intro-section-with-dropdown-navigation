@@ -5,4 +5,8 @@
   --gray-50: hsl(0, 0%, 98%);
   --gray-500: hsl(0, 0%, 41%);
   --gray-950: hsl(0, 0%, 8%);
+  /* # TYPOGRAPHY # */
+  --ff-epilogue: "Epilogue", sans-serif;
+  --fw-500: 500;
+  --fw-700: 700;
 }
