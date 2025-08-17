@@ -43,3 +43,16 @@ body {
   font-family: var(--ff-epilogue);
   font-weight: var(--fw-500);
 }
+
+/* ### HEADER ### */
+
+header {
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop-nav {
+  display: none;
+}
