@@ -67,6 +67,32 @@ header {
   display: none;
 }
 
+header a.btn {
+  border: 2px solid var(--gray-500);
+}
+
+header a.btn:hover {
+  border-color: var(--gray-950);
+}
+
+.arrow-container {
+  margin-inline-start: 0.3rem;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url(./images/icon-arrow-up.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header a:hover .arrow-container {
+  filter: brightness(0%);
+}
+
+header a:hover {
+  color: var(--gray-950);
+}
+
 /* ### MAIN GRID ### */
 
 .grid {
@@ -98,6 +124,12 @@ header {
   background-color: var(--gray-950);
   color: var(--gray-50);
   font-weight: var(--fw-700);
+}
+
+.grid__content a:hover {
+  background-color: var(--gray-50);
+  color: var(--gray-950);
+  outline: 2px solid var(--gray-950);
 }
 
 .grid__content ul {
