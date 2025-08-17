@@ -124,6 +124,7 @@ header {
     justify-content: unset;
     gap: 4rem;
     padding-inline: 2.5rem;
+    padding-block-end: 0;
   }
 
   .nav-icon {
@@ -148,5 +149,54 @@ header {
   header .btn {
     padding: 0.6rem 1rem;
     border: 2px solid var(--gray-950);
+  }
+
+  /* ### MAIN GRID ### */
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex-grow: 1;
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    width: 75%;
+    margin-inline: auto;
+  }
+
+  .grid {
+    grid-template-areas: "content img";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9rem;
+  }
+
+  .grid__content {
+    align-self: end;
+    padding: 0;
+    text-align: start;
+  }
+
+  .grid__content h1 {
+    font-size: 4.4rem;
+  }
+
+  .grid__content p {
+    margin-top: 3rem;
+    max-width: 41ch;
+    /* font-size: 1.2rem; */
+  }
+
+  .grid__content a {
+    margin-top: 3rem;
+  }
+
+  .grid__content ul {
+    margin-top: 6rem;
   }
 }
