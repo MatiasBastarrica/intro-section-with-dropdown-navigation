@@ -36,3 +36,10 @@ a {
 ul {
   list-style: none;
 }
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: var(--ff-epilogue);
+  font-weight: var(--fw-500);
+}
