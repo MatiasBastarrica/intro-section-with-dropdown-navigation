@@ -37,11 +37,21 @@ ul {
   list-style: none;
 }
 
+/* ### UTILITY CLASSES ### */
+
+.btn {
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
   font-family: var(--ff-epilogue);
   font-weight: var(--fw-500);
+  color: var(--gray-500);
+  background-color: var(--gray-50);
 }
 
 /* ### HEADER ### */
@@ -55,4 +65,53 @@ header {
 
 .desktop-nav {
   display: none;
+}
+
+/* ### MAIN GRID ### */
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "content";
+  gap: 1.5rem;
+}
+
+.grid__content {
+  grid-area: content;
+  padding: 2rem 1.3rem;
+  text-align: center;
+}
+
+.grid__content h1 {
+  color: var(--gray-950);
+  font-size: 2.1rem;
+}
+
+.grid__content p {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
+.grid__content a {
+  margin-top: 1.5rem;
+  background-color: var(--gray-950);
+  color: var(--gray-50);
+  font-weight: var(--fw-700);
+}
+
+.grid__content ul {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.grid__content li {
+  flex: 1;
+}
+
+.grid__img {
+  grid-area: img;
 }
