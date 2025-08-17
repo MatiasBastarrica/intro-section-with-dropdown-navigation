@@ -115,3 +115,38 @@ header {
 .grid__img {
   grid-area: img;
 }
+
+/* ### MEDIA QUERIES ### */
+
+@media (min-width: 50em) {
+  /* # HEADER # */
+  header {
+    justify-content: unset;
+    gap: 4rem;
+    padding-inline: 2.5rem;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+
+  .desktop-nav {
+    flex-grow: 1;
+    display: block;
+  }
+
+  .desktop-nav ul {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .desktop-nav ul li:nth-last-child(2) {
+    margin-inline-start: auto;
+  }
+
+  header .btn {
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--gray-950);
+  }
+}
