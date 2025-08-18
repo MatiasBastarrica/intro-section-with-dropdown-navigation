@@ -144,6 +144,7 @@ header a:hover {
 }
 
 dialog {
+  box-sizing: content-box;
   top: 0;
   right: 0;
   left: auto;
@@ -156,7 +157,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: rgba(223, 77, 77, 0.871);
+  background-color: rgb(0 0 0 / 64%);
 }
 
 .close-icon {
@@ -179,11 +180,11 @@ dialog::backdrop {
 .mobile-nav > ul > li:nth-last-child(2),
 .mobile-nav > ul > li:nth-last-child(1) {
   font-size: 0.985rem;
-  align-self: center;
 }
 
 .mobile-nav > ul > li:nth-last-child(2) {
   margin-top: 2rem;
+  align-self: center;
 }
 
 .mobile-nav > ul > li:last-child a {
@@ -212,6 +213,7 @@ dialog::backdrop {
   grid-template-areas:
     "img"
     "content";
+  justify-items: center;
   gap: 1.5rem;
 }
 
@@ -229,6 +231,7 @@ dialog::backdrop {
 .grid__content p {
   margin-top: 1.5rem;
   line-height: 1.6;
+  max-width: 50ch;
 }
 
 .grid__content a {
@@ -262,7 +265,23 @@ dialog::backdrop {
 
 /* ### MEDIA QUERIES ### */
 
-@media (min-width: 50em) {
+@media (min-width: 23.438em) {
+  /* # HEADER # */
+
+  .mobile-nav > ul > li:nth-last-child(2) {
+    align-self: flex-start;
+  }
+
+  .mobile-nav > ul > li:last-child {
+    align-self: flex-start;
+  }
+
+  dialog {
+    width: 50%;
+  }
+}
+
+@media (min-width: 70em) {
   /* # HEADER # */
   header {
     justify-content: unset;
@@ -317,6 +336,7 @@ dialog::backdrop {
   .grid {
     grid-template-areas: "content img";
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     gap: 9rem;
   }
 
