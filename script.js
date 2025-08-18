@@ -11,6 +11,26 @@ const compnayNavContainerDesktop = desktopNav.querySelector(
 const navIcon = document.querySelector(".nav-icon");
 const dialog = document.querySelector("dialog");
 const closeIcon = dialog.querySelector(".close-icon");
+const mobileNav = document.querySelector(".mobile-nav");
+const featuresLinkMobile = mobileNav.querySelector(".features-list-item a");
+const featureNavContainerMobile = mobileNav.querySelector(
+  ".features-nav-container"
+);
+const companyLinkMobile = mobileNav.querySelector(".company-list-item a");
+const companyNavContainerMobile = mobileNav.querySelector(
+  ".company-nav-container"
+);
+
+const mobileNavStatus = {
+  featuresLink: {
+    isOpen: false,
+    element: featureNavContainerMobile,
+  },
+  companyLink: {
+    isOpen: false,
+    element: companyNavContainerMobile,
+  },
+};
 
 const desktopNavStatus = {
   featuresLink: {
@@ -23,10 +43,10 @@ const desktopNavStatus = {
   },
 };
 
-function handleDesktopMenu(navContainer, navLink) {
-  for (const nav in desktopNavStatus) {
-    if (Object.prototype.hasOwnProperty.call(desktopNavStatus, nav)) {
-      const dropdownNav = desktopNavStatus[nav];
+function handleMenu(navContainer, navLink, navStatus) {
+  for (const nav in navStatus) {
+    if (Object.prototype.hasOwnProperty.call(navStatus, nav)) {
+      const dropdownNav = navStatus[nav];
       if (dropdownNav.element === navContainer) {
         continue;
       } else if (dropdownNav.isOpen) {
@@ -38,17 +58,33 @@ function handleDesktopMenu(navContainer, navLink) {
 
   if (navContainer.classList.contains("hide")) {
     navContainer.classList.remove("hide");
-    desktopNavStatus[navLink].isOpen = true;
+    navStatus[navLink].isOpen = true;
   } else {
     navContainer.classList.add("hide");
-    desktopNavStatus[navLink].isOpen = false;
+    navStatus[navLink].isOpen = false;
   }
 }
 
 featuresLinkDesktop.addEventListener("click", () => {
-  handleDesktopMenu(featureNavContainerDesktop, "featuresLink");
+  handleMenu(featureNavContainerDesktop, "featuresLink", desktopNavStatus);
 });
 
 companyLinkDesktop.addEventListener("click", () => {
-  handleDesktopMenu(compnayNavContainerDesktop, "companyLink");
+  handleMenu(compnayNavContainerDesktop, "companyLink", desktopNavStatus);
+});
+
+navIcon.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeIcon.addEventListener("click", () => {
+  dialog.close();
+});
+
+featuresLinkMobile.addEventListener("click", () => {
+  handleMenu(featureNavContainerMobile, "featuresLink", mobileNavStatus);
+});
+
+companyLinkMobile.addEventListener("click", () => {
+  handleMenu(companyNavContainerMobile, "companyLink", mobileNavStatus);
 });
