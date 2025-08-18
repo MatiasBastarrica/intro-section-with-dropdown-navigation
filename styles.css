@@ -84,7 +84,7 @@ header a.btn:hover {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: url(./images/icon-arrow-up.svg);
+  background: url(./images/icon-arrow-down.svg);
   background-repeat: no-repeat;
   background-position: center;
 }

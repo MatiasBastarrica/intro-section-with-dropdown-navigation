@@ -1,21 +1,29 @@
 const desktopNav = document.querySelector(".desktop-nav");
-const featuresLink = desktopNav.querySelector(".features-list-item a");
-const featureNavContainer = desktopNav.querySelector(".feature-nav-container");
-const companyLink = desktopNav.querySelector(".company-list-item a");
-const compnayNavContainer = desktopNav.querySelector(".company-nav-container");
+const featuresLinkDesktop = desktopNav.querySelector(".features-list-item a");
+const featureNavContainerDesktop = desktopNav.querySelector(
+  ".feature-nav-container"
+);
+const companyLinkDesktop = desktopNav.querySelector(".company-list-item a");
+const compnayNavContainerDesktop = desktopNav.querySelector(
+  ".company-nav-container"
+);
+
+const navIcon = document.querySelector(".nav-icon");
+const dialog = document.querySelector("dialog");
+const closeIcon = dialog.querySelector(".close-icon");
 
 const desktopNavStatus = {
   featuresLink: {
     isOpen: false,
-    element: featureNavContainer,
+    element: featureNavContainerDesktop,
   },
   companyLink: {
     isOpen: false,
-    element: compnayNavContainer,
+    element: compnayNavContainerDesktop,
   },
 };
 
-function handleMenu(navContainer, navLink) {
+function handleDesktopMenu(navContainer, navLink) {
   for (const nav in desktopNavStatus) {
     if (Object.prototype.hasOwnProperty.call(desktopNavStatus, nav)) {
       const dropdownNav = desktopNavStatus[nav];
@@ -37,10 +45,10 @@ function handleMenu(navContainer, navLink) {
   }
 }
 
-featuresLink.addEventListener("click", () => {
-  handleMenu(featureNavContainer, "featuresLink");
+featuresLinkDesktop.addEventListener("click", () => {
+  handleDesktopMenu(featureNavContainerDesktop, "featuresLink");
 });
 
-companyLink.addEventListener("click", () => {
-  handleMenu(compnayNavContainer, "companyLink");
+companyLinkDesktop.addEventListener("click", () => {
+  handleDesktopMenu(compnayNavContainerDesktop, "companyLink");
 });
