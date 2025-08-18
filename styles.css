@@ -97,6 +97,8 @@ header a:hover {
   color: var(--gray-950);
 }
 
+/* # DESKTOP NAV # */
+
 .features-list-item,
 .company-list-item {
   position: relative;
@@ -132,6 +134,59 @@ header a:hover {
 
 .icon {
   flex-shrink: 0;
+}
+
+/* # MOBILE NAV # */
+
+.nav-icon,
+.close-icon {
+  cursor: pointer;
+}
+
+dialog {
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 68%;
+  background-color: #fff;
+  height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border: none;
+}
+
+dialog::backdrop {
+  background-color: rgba(223, 77, 77, 0.871);
+}
+
+.close-icon {
+  align-self: flex-end;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--gray-500);
+  font-size: 1.1rem;
+}
+
+.mobile-nav ul li:nth-last-child(2),
+.mobile-nav ul li:nth-last-child(1) {
+  font-size: 0.985rem;
+  align-self: center;
+}
+
+.mobile-nav ul li:nth-last-child(2) {
+  margin-top: 2rem;
+}
+
+.mobile-nav ul li:last-child a {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 1.8rem;
 }
 
 /* ### MAIN GRID ### */
