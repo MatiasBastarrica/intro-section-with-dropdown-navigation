@@ -45,6 +45,10 @@ ul {
   display: inline-block;
 }
 
+.hide {
+  display: none;
+}
+
 /* ### GENERAL STYLING ### */
 
 body {
@@ -91,6 +95,43 @@ header a:hover .arrow-container {
 
 header a:hover {
   color: var(--gray-950);
+}
+
+.features-list-item,
+.company-list-item {
+  position: relative;
+}
+
+.features-nav,
+.company-nav {
+  position: absolute;
+  top: 33px;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0px 0px 18px rgba(68, 68, 68, 0.248);
+}
+
+.features-nav {
+  width: 150px;
+  right: 0;
+}
+
+.company-nav {
+  left: 0;
+}
+
+.features-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  flex-shrink: 0;
 }
 
 /* ### MAIN GRID ### */
@@ -168,7 +209,7 @@ header a:hover {
     display: block;
   }
 
-  .desktop-nav ul {
+  .desktop-nav > ul {
     display: flex;
     gap: 2.5rem;
     align-items: center;
