@@ -99,13 +99,13 @@ header a:hover {
 
 /* # DESKTOP NAV # */
 
-.features-list-item,
-.company-list-item {
+.desktop-nav .features-list-item,
+.desktop-nav .company-list-item {
   position: relative;
 }
 
-.features-nav,
-.company-nav {
+.desktop-nav .features-nav,
+.desktop-nav .company-nav {
   position: absolute;
   top: 33px;
   background-color: #fff;
@@ -117,12 +117,12 @@ header a:hover {
   box-shadow: 0px 0px 18px rgba(68, 68, 68, 0.248);
 }
 
-.features-nav {
+.desktop-nav .features-nav {
   width: 150px;
   right: 0;
 }
 
-.company-nav {
+.desktop-nav .company-nav {
   left: 0;
 }
 
@@ -151,9 +151,7 @@ dialog {
   background-color: #fff;
   height: 100vh;
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+
   border: none;
 }
 
@@ -162,10 +160,15 @@ dialog::backdrop {
 }
 
 .close-icon {
-  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.mobile-nav ul {
+.mobile-nav {
+  margin-top: 2.5rem;
+}
+
+.mobile-nav > ul {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -173,20 +176,33 @@ dialog::backdrop {
   font-size: 1.1rem;
 }
 
-.mobile-nav ul li:nth-last-child(2),
-.mobile-nav ul li:nth-last-child(1) {
+.mobile-nav > ul > li:nth-last-child(2),
+.mobile-nav > ul > li:nth-last-child(1) {
   font-size: 0.985rem;
   align-self: center;
 }
 
-.mobile-nav ul li:nth-last-child(2) {
+.mobile-nav > ul > li:nth-last-child(2) {
   margin-top: 2rem;
 }
 
-.mobile-nav ul li:last-child a {
+.mobile-nav > ul > li:last-child a {
   width: 100%;
   text-align: center;
   padding: 0.8rem 1.8rem;
+}
+
+.mobile-nav .features-nav-container,
+.mobile-nav .company-nav-container {
+  padding-inline-start: 1.8rem;
+  padding-block: 2rem;
+}
+
+.mobile-nav .features-nav,
+.mobile-nav .company-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 /* ### MAIN GRID ### */
